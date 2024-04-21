@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.testnosecurity.mapper.MondayMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.testnosecurity.pojo.Monday">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="position" column="position" jdbcType="VARCHAR"/>
+            <result property="one" column="one" jdbcType="VARCHAR"/>
+            <result property="two" column="two" jdbcType="VARCHAR"/>
+            <result property="three" column="three" jdbcType="VARCHAR"/>
+            <result property="four" column="four" jdbcType="VARCHAR"/>
+            <result property="five" column="five" jdbcType="VARCHAR"/>
+            <result property="peopleMax" column="people_max" jdbcType="INTEGER"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,position,one,
+        two,three,four,
+        five,people_max,type
+    </sql>
+    <select id="selectPositionByOne" resultMap="BaseResultMap">
+        select position
+        from monday
+        where one = #{one,jdbcType=VARCHAR}
+    </select>
+    <select id="selectPositionByTwo" resultMap="BaseResultMap">
+        select position
+        from monday
+        where two = #{two,jdbcType=VARCHAR}
+    </select>
+    <select id="selectPositionByThree" resultMap="BaseResultMap">
+        select position
+        from monday
+        where three = #{three,jdbcType=VARCHAR}
+    </select>
+    <select id="selectPositionByFour" resultMap="BaseResultMap">
+        select position
+        from monday
+        where four = #{four,jdbcType=VARCHAR}
+    </select>
+    <select id="selectPositionByFive" resultMap="BaseResultMap">
+        select position
+        from monday
+        where five = #{five,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" href="../pages/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../pages/users.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            /* background-color: aqua;*/
+            background-image: url(../assets/images/爱上紫禁城-海棠.jpg);
+        }
+        .box1{
+            background-color: white;
+            width: 50%;
+            height: 100vh;
+            position: relative;
+            left: -50%;
+            /* background: linear-gradient(to right bottom,rgba(255,255,255,1),rgba(255,255,255,0.5)); */
+            /* backdrop-filter: blur(2rem); */
+            /* border-radius:0em 2em 2em 0em; */
+        }
+        .musicimg{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: darkred;
+            color: black;
+            right: -40px;
+            top: 50%;
+            margin-top: -30px;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 1em;
+        }
+        .img img{
+            margin-right: 50px;
+            margin-top: 70px;
+        }
+        .bg{
+            position: absolute;
+            /* background-color: aqua;*/
+            background-image: url(../assets/images/flower1mini2.jpg) ;
+            width: 60%;
+            height: 20%;
+            bottom: 0%;
+            border-radius: 0em 2em 0em 0em;
+        }
+        .musicplay{
+            position: absolute;
+            width: 60%;
+            height: 20%;
+            bottom: 0%;
+            background: linear-gradient(to right bottom,rgba(255,255,255,0),rgba(255,255,255,0.1));
+            backdrop-filter: blur(0.3rem);
+            border-radius: 0em 2em 0em 0em;
+        }
+    </style>
+</head>
+<body>
+<div class="box1" id="box">
+    <span class="musicimg"><img src="../assets/images/music.png" style="width: 40px; height: 40px;"></span>
+    <div class="daohang">
+        <nav class="navbar navbar-expand-md bg-light navbar-light" style="background-color: white; ">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="img" style="font-size: 20px;">
+        <img src="../assets/images/flower1mini1.jpg" style="width: 28%; height: 21%;">
+        <img src="../assets/images/flower1mini2.jpg" style="width: 28%; height: 21%;">
+        "marco & star"
+    </div>
+    <div class="bg"></div>
+    <div class="musicplay">
+        <div class="music">
+            <h2 class="title">Music Name</h2>
+            <div class="player">
+                <audio src=""></audio>
+                <div class="btns">
+                    <div class="prev">
+				                <span class="material-icons">
+				                    skip_previous
+				                    </span>
+                    </div>
+                    <div class="playPause" >
+				                <span class="material-icons">
+				                    play_circle_outline
+				                    </span>
+                    </div>
+                    <div class="next">
+				                <span class="material-icons">
+				                    skip_next
+				                    </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload =function(){
+        var box = document.getElementById('box');
+        var timer = null;
+        var num = box.offsetWidth;
+        // 打印盒子右边距宽度
+        console.log(num);
+
+        box.onmouseover = function(){
+            //先关闭定时器
+            clearInterval(timer);
+            timer = setInterval(function(){
+                if(box.offsetLeft <= 0 && box.offsetLeft > -5){
+
+                    clearInterval(timer);
+                    return;
+                }
+                box.style.left = box.offsetLeft + 5 +'px';
+            },1)
+        }
+        box.onmouseout = function(){
+            //先关闭定时器
+            clearInterval(timer);
+            timer = setInterval(function(){
+                if(box.offsetLeft < -num){
+                    console.log(num);
+                    clearInterval(timer);
+                    return;
+                }
+                box.style.left = box.offsetLeft + -5 +'px';
+
+            },1)
+        }
+    }
+</script>
+<script src="../pages/users.js"></script>
+</body>
+</html>

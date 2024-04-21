@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.testnosecurity.mapper.UsersMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.testnosecurity.pojo.Users">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="pwd" column="pwd" jdbcType="VARCHAR"/>
+            <result property="stuId" column="stu_id" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="stuMail" column="stu_mail" jdbcType="VARCHAR"/>
+            <result property="verCode" column="verCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,pwd,
+        stu_id,type,phone,
+        stu_mail,verCode
+    </sql>
+    <select id="selectAllByUserName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where
+        user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+    <select id="selectTypeByUserName" resultMap="BaseResultMap">
+        select type
+        from users
+        where user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+    <select id="getTypeByUserName" resultMap="BaseResultMap">
+        select type
+        from users
+        where user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+    <insert id="insertAll">
+        insert into users
+        (id, user_name, pwd,
+         stu_id, type, phone,
+         stu_mail, verCode)
+        values (#{id,jdbcType=NUMERIC}, #{userName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
+                #{stuId,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+                #{stuMail,jdbcType=VARCHAR}, #{verCode,jdbcType=VARCHAR})
+
+    </insert>
+    <update id="updateVerCodeByUserName">
+        update users
+        set verCode = #{verCode,jdbcType=VARCHAR}
+        where user_name = #{userName,jdbcType=VARCHAR}
+    </update>
+    <update id="updatePwdByUserName">
+        update users
+        set pwd = #{pwd,jdbcType=VARCHAR}
+        where user_name = #{userName,jdbcType=VARCHAR}
+    </update>
+    <select id="getByUserName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where
+        user_name = #{userName,jdbcType=VARCHAR}
+    </select>
+    <insert id="addAll">
+        insert into users
+        (id, user_name, pwd,
+         stu_id, type, phone,
+         stu_mail, verCode)
+        values (#{id,jdbcType=NUMERIC}, #{userName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
+                #{stuId,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+                #{stuMail,jdbcType=VARCHAR}, #{verCode,jdbcType=VARCHAR})
+
+    </insert>
+    <select id="getAllByPhone" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from users
+        where
+        phone = #{phone,jdbcType=VARCHAR}
+    </select>
+    <update id="updatePwdByStuMail">
+        update users
+        set pwd = #{pwd,jdbcType=VARCHAR}
+        where stu_mail = #{stuMail,jdbcType=VARCHAR}
+    </update>
+    <update id="updateVerCodeByStuMail">
+        update users
+        set verCode = #{verCode,jdbcType=VARCHAR}
+        where stu_mail = #{stuMail,jdbcType=VARCHAR}
+    </update>
+    <select id="selectVerCodeByStuMail" resultMap="BaseResultMap">
+        select verCode
+        from users
+        where stu_mail = #{stuMail,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

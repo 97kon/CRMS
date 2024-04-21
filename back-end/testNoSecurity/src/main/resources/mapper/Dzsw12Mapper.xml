@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.testnosecurity.mapper.Dzsw12Mapper">
+
+    <resultMap id="BaseResultMap" type="com.example.testnosecurity.pojo.Dzsw12">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="stuUnit" column="stu_unit" jdbcType="VARCHAR"/>
+            <result property="stuClass" column="stu_class" jdbcType="VARCHAR"/>
+            <result property="monday" column="monday" jdbcType="VARCHAR"/>
+            <result property="tuseday" column="tuseday" jdbcType="VARCHAR"/>
+            <result property="wednesday" column="wednesday" jdbcType="VARCHAR"/>
+            <result property="thursday" column="thursday" jdbcType="VARCHAR"/>
+            <result property="friday" column="friday" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,stu_unit,stu_class,
+        monday,tuseday,wednesday,
+        thursday,friday
+    </sql>
+    <select id="selectAllByMonday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dzsw12
+        where
+        monday = #{monday,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByTuseday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dzsw12
+        where
+        tuseday = #{tuseday,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByWednesday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dzsw12
+        where
+        wednesday = #{wednesday,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByThursday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dzsw12
+        where
+        thursday = #{thursday,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAllByFriday" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from dzsw12
+        where
+        friday = #{friday,jdbcType=VARCHAR}
+    </select>
+    <select id="selectMondayAndTusedayAndWednesdayAndThursdayAndFridayById" resultMap="BaseResultMap">
+        select monday, tuseday, wednesday, thursday, friday
+        from dzsw12
+        where id = #{id,jdbcType=NUMERIC}
+    </select>
+</mapper>

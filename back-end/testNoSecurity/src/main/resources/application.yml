@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/crms?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  #配置邮箱验证
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    username: 3231045496@qq.com
+    password: degkasujydakcigh
+    #指定端口，QQ邮箱默认
+#    port: 465
+
+server:
+  port: 8090

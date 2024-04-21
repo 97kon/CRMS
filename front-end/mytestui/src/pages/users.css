@@ -1,0 +1,52 @@
+.music{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-weight: 25;
+    text-align: center;
+    font-size: 1.5625rem;
+    color: white;
+    margin-top: 1.875rem;
+}
+.player{
+    position: relative;
+}
+.btns {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* background: red; */
+
+}
+
+.btns div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns div:active,
+.btns div.active
+{
+    color:darkred;
+}
+.btns .playPause {
+    height: 100px;
+    width: 100px;
+}
+.btns .material-icons {
+    font-size: 2em;
+    color: white;
+}
+.btns .playPause span {
+    font-size: 3em;
+    /* color: darkred; */
+}
+.material-icons:hover{
+    color: darkred;
+}

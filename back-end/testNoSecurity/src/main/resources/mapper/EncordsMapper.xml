@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.testnosecurity.mapper.EncordsMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.testnosecurity.pojo.Encords">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="stuId" column="stu_id" jdbcType="VARCHAR"/>
+            <result property="applyUnit" column="apply_unit" jdbcType="VARCHAR"/>
+            <result property="applyDay" column="apply_day" jdbcType="DATE"/>
+            <result property="applyTime" column="apply_time" jdbcType="VARCHAR"/>
+            <result property="applyStuClass" column="apply_stu_class" jdbcType="VARCHAR"/>
+            <result property="applyPeopleNum" column="apply_people_num" jdbcType="INTEGER"/>
+            <result property="applyClassNum" column="apply_class_num" jdbcType="INTEGER"/>
+            <result property="applyClass" column="apply_class" jdbcType="VARCHAR"/>
+            <result property="applyUser" column="apply_user" jdbcType="VARCHAR"/>
+            <result property="applyPhone" column="apply_phone" jdbcType="VARCHAR"/>
+            <result property="applyReason" column="apply_reason" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="verifyCode" column="verify_code" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,stu_id,apply_unit,
+        apply_day,apply_time,apply_stu_class,
+        apply_people_num,apply_class_num,apply_class,
+        apply_user,apply_phone,apply_reason,
+        status,verify_code
+    </sql>
+    <insert id="insertAll">
+        insert into encords
+        (id, stu_id, apply_unit,
+         apply_day, apply_time, apply_stu_class,
+         apply_people_num, apply_class_num, apply_class,
+         apply_user, apply_phone, apply_reason,
+         status, verify_code)
+        values (#{id,jdbcType=NUMERIC}, #{stuId,jdbcType=VARCHAR}, #{applyUnit,jdbcType=VARCHAR},
+                #{applyDay,jdbcType=TIMESTAMP}, #{applyTime,jdbcType=VARCHAR}, #{applyStuClass,jdbcType=VARCHAR},
+                #{applyPeopleNum,jdbcType=NUMERIC}, #{applyClassNum,jdbcType=NUMERIC}, #{applyClass,jdbcType=VARCHAR},
+                #{applyUser,jdbcType=VARCHAR}, #{applyPhone,jdbcType=VARCHAR}, #{applyReason,jdbcType=VARCHAR},
+                #{status,jdbcType=NUMERIC}, #{verifyCode,jdbcType=VARCHAR})
+
+    </insert>
+    <select id="selectAllByStatus" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from encords
+        where
+        status = #{status,jdbcType=NUMERIC}
+    </select>
+    <update id="updateStatusById">
+        update encords
+        set status = #{status,jdbcType=NUMERIC}
+        where id = #{id,jdbcType=NUMERIC}
+    </update>
+    <update id="updateVerifyCodeById">
+        update encords
+        set verify_code = #{verifyCode,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=NUMERIC}
+    </update>
+    <delete id="deleteById">
+        delete
+        from encords
+        where id = #{id,jdbcType=NUMERIC}
+    </delete>
+    <select id="selectAllByStuId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from encords
+        where
+        stu_id = #{stuId,jdbcType=VARCHAR}
+    </select>
+</mapper>
