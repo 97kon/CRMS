@@ -136,7 +136,7 @@
 
 **用例图**
 
-![image-20240421220527832](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421220527832.png)
+![image-20240421220527832](https://github.com/97kon/CRMS/blob/master/image/Axious.png)
 
 ## 1.2 原型设计
 
