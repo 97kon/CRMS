@@ -1,3 +1,13 @@
+back-end（后端代码）
+database（数据库）
+front-end（前端代码）
+image（项目展示图片）
+
+项目使用展示+核心源码解说视频 链接（百度云盘）
+链接：https://pan.baidu.com/s/1VcdOaRPvtfXfEb19VUOOPg 
+提取码：lqm6
+
+
 ### 目录
 
 一、需求分析与系统设计
