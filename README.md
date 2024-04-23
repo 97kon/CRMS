@@ -146,7 +146,7 @@ image（项目展示图片）
 
 **用例图**
 
-![yonglitu](/image/yonglitu.png)
+![yonglitu](./image/yonglitu.png)
 
 ## 1.2 原型设计
 
