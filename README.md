@@ -237,11 +237,13 @@ image（项目展示图片）
 
 **类图设计**：
 
-![image-20240421221027820](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221027820.png)
+![image-20240421221027820](./image/leitusheji.png)
 
 **时序图设计**：
 
-![image-20240421221044329](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221044329.png)
+![shixutu1](./image/shixutu1.png)
+
+![shixutu2](./image/shixutu2.png)
 
 # 二、软件系统开发
 
@@ -249,69 +251,69 @@ image（项目展示图片）
 
 本CRMS项目主要是通过Navicat（Mysql专业版）通过图形化界面创建数据库以及数据表等结构设计，最终数据库创建完成的界面展示为：
 
-![image-20240421221116512](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221116512.png)
+![image-20240421221116512](./image/shujuku.png)
 
 ## 2.2 服务端工程开发
 
 ​	项目后端集成MyBatisPlus：
 
-![image-20240421221152106](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221152106.png)
+![image-20240421221152106](./image/pom.png)
 
 ​	设置数据库链接：
 
-![image-20240421221206911](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221206911.png)
+![image-20240421221206911](./image/shujukuLink.png)
 
 ​	搭建数据层：（例：Users）
 
-![image-20240421221227293](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221227293.png)
+![image-20240421221227293](./image/pojo.png)
 
 ​	搭建Dao层：
 
 ​	UsersMapper：
 
-![image-20240421221250434](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221250434.png)
+![image-20240421221250434](./image/UsersMapper.png)
 
 ​	UsersMapper.xml
 
-![image-20240421221304605](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221304605.png)
+![image-20240421221304605](./image/UsersMapperXML.png)
 
 ​	搭建业务逻辑层：
 
 ​	UsersService：
 
-![image-20240421221326140](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221326140.png)
+![image-20240421221326140](./image/UsersService.png)
 
 ​	UsersServiceImpl：
 
-![image-20240421221340956](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221340956.png)
+![image-20240421221340956](./image/UsersServiceIMPL.png)
 
 ​	搭建控制层：
 
 ​	UsersController：
 
-![image-20240421221409067](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221409067.png)
+![image-20240421221409067](./image/UsersController.png)
 
 ​	设置跨域：（CrossOrigins）
 
-![image-20240421221428527](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221428527.png)
+![image-20240421221428527](./image/CrossOrigins.png)
 
 ## 2.3 前端工程开发
 
 ​	前端依赖环境 vue  ui：
 
-![image-20240421221500183](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221500183.png)
+![image-20240421221500183](./image/VueUI.png)
 
 ​	前端main,js
 
-![image-20240421221509941](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221509941.png)
+![image-20240421221509941](./image/mainJS.png)
 
 ​	Axios配置在vue config.js
 
-![image-20240421221530415](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221530415.png)
+![image-20240421221530415]()
 
 ​	Router:
 
-![image-20240421221539037](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221539037.png)
+![image-20240421221539037](./image/Router.png)
 
 # 三、系统运行测试
 
@@ -319,7 +321,7 @@ image（项目展示图片）
 
 使用springboot内置的tomcat作为web服务器运行：
 
-![image-20240421221609857](C:\Users\liuqiming\AppData\Roaming\Typora\typora-user-images\image-20240421221609857.png)
+![image-20240421221609857](./image/test.png)
 
 # 四、总结
 
